@@ -13,7 +13,7 @@ def create_app():
     login_manager.login_view = 'auth.login'
 
     from app.routes import auth_routes, waste_routes
-    app.register_blueprint(auth_bp, url_prefix='/auth')
-    app.register_blueprint(waste_bp, url_prefix='/waste')
+    app.register_blueprint(auth_routes.auth_bp, url_prefix='/auth')
+    app.register_blueprint(waste_routes.waste_bp, url_prefix='/waste')
 
     return app

@@ -11,8 +11,8 @@ def create_app():
 
     db = SQLAlchemy(app)
     migrate = Migrate(app, db)
-    login_manager = LoginManager(app)
-    login_manager.login_view = 'auth.login'
+    login = LoginManager(app)
+    login.login_view = 'auth.login'
 
     from app.routes import auth_routes, waste_routes
     app.register_blueprint(auth_routes.auth_bp, url_prefix='/auth')

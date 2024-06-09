@@ -1,8 +1,28 @@
 print("Starting run.py")
 
-from app import create_app
+from flask import Flask, render_template
+import logging
 
-print("Imported create_app")
+print("Imported Flask and other modules")
+
+def create_app():
+    logging.basicConfig(level=logging.DEBUG)
+    print("Creating Flask app")
+    
+    app = Flask(__name__, static_folder='static', template_folder='templates')
+
+    @app.route('/')
+    def home():
+        return render_template('index.html')
+
+    @app.route('/test')
+    def test():
+        return 'This is a test route.'
+
+    app.logger.debug('App created successfully!')
+    print('App created successfully!')
+
+    return app
 
 app = create_app()
 

@@ -19,7 +19,7 @@ h4{
 h6{
     font-weight: 700;
     font-size: 12px;
-}
+} 
 p{
     font-size: 16px;
     color: #465b52;
@@ -182,6 +182,95 @@ h2{
 .forgot-password:hover{
     text-decoration: underline;
 }
+.content{
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #222;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+    color: rgb(1, 66, 1);
+    font-weight: 1000;
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 400;
+    line-height: 25px;
+}
+.btn-home:hover{
+    border: none;
+}
+.btn-home:hover span{
+    width: 100%;
+}
+footer{
+    background: #343434;
+    padding-top: 50px;
+}
+.container{
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    width: 33.3%;
+}
+.container h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.footer-content p{
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+}
+.footer-content ul{
+    text-align: center;
+}
+.list{
+    padding: 0;
+}
+.list li{
+    width: auto;
+    text-align: center;
+    list-style: none;
+    padding: 7px;
+    position: relative;  
+}
+.list li::before{
+    content: " ";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #f18930;
+    transition-duration: .5s;
+}
+.list li:hover::before{
+    width: 70%;
+}
+.social-icons{
+    text: display;
+    padding: 0;
+}
+.social-icons li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i{
+    color: #fff;
+    font-size: 25px;
+}
+
 /* .banner{
     width: 100%;
     height: 100vh;

@@ -5,15 +5,15 @@ def create_app():
     logging.basicConfig(level=logging.DEBUG)
     print("Creating Flask app")
     
-    app = Flask(__name__, static_folder='static', template_folder='templates')
+    app = Flask(__name__, static_folder='static', template_folder='app/templates')
 
     @app.route('/')
     def home():
-        return render_template('Registration.html')  # Rendering Registration.html
+        return render_template('Registration.html')
 
     @app.route('/login')
     def login():
-        return render_template('Login.html')  # Rendering Login.html
+        return render_template('Login.html')
 
     @app.route('/test')
     def test():

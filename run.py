@@ -1,9 +1,5 @@
-print("Starting run.py")
-
 from flask import Flask, render_template
 import logging
-
-print("Imported Flask and other modules")
 
 def create_app():
     logging.basicConfig(level=logging.DEBUG)
@@ -11,13 +7,13 @@ def create_app():
     
     app = Flask(__name__, static_folder='static', template_folder='templates')
 
-    @app.route('/register')
-    def register():
-        return render_template('Registration.html')
+    @app.route('/')
+    def home():
+        return render_template('Registration.html')  # Rendering Registration.html
 
     @app.route('/login')
     def login():
-        return render_template('Login.html')
+        return render_template('Login.html')  # Rendering Login.html
 
     @app.route('/test')
     def test():
@@ -30,8 +26,5 @@ def create_app():
 
 app = create_app()
 
-print("Created app")
-
 if __name__ == "__main__":
-    print("Running app")
     app.run(debug=True)

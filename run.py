@@ -11,9 +11,13 @@ def create_app():
     
     app = Flask(__name__, static_folder='static', template_folder='templates')
 
-    @app.route('/')
-    def home():
-        return render_template('index.html')
+    @app.route('/register')
+    def register():
+        return render_template('Registration.html')
+
+    @app.route('/login')
+    def login():
+        return render_template('Login.html')
 
     @app.route('/test')
     def test():

@@ -1,14 +1,13 @@
-from flask import Flask
+print("Starting run.py")
 
-def create_app():
-    app = Flask(__name__)
+from app import create_app
 
-    @app.route('/')
-    def home():
-        return 'Hello, World!'
+print("Imported create_app")
 
-    @app.route('/test')
-    def test():
-        return 'This is a test route.'
+app = create_app()
 
-    return app
+print("Created app")
+
+if __name__ == "__main__":
+    print("Running app")
+    app.run(debug=True)

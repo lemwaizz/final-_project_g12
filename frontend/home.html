@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="download__3_-removebg-preview.png" class="logo" alt="WM"></a>
+        <!-- <div class="navbar">
+            <h2>Waste <span><br>Management</span></h2>
+        </div> -->
+        <div class="list">
+            <ul id="navbar">
+                <li><a href="Home">Home</a></li>
+                <li><a href="Services">Services</a></li>
+                <li><a href="Admin">Admin</a></li>
+                <li><a href="About Us">About Us</a></li>
+                <button class="btnLogin-popup">Login</button>
+            </ul>
+        </div>
+    </section>
+    <section id="hero-section"></section>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <div class="form-box">
+                <h2>Login</h2>
+                <form action="login_action.php" method="post">
+                    <label for="login-email">Email</label><br><br>
+                    <input type="email" id="login-email" name="email" placeholder="email" required><br><br>
+                    <label for="login-password">Password</label><br><br>
+                    <input type="password" id="login-password" name="password" placeholder="password" required><br><br>
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label><br><br>
+                    <button class="bt">Log in</button>
+                    <p><a href="registration.html" id="links" class="signup-link">New User? Sign Up here</a></p>
+                    <p><a href="#" id="links" class="forgot-password">Forgot password?</a></p>
+                </form>
+            </div>
+        </div>    
+    </div>
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <div class="form-box">
+                <h2>Register</h2>
+                <form action="register_action.php" method="post">
+                    <label for="reg-username">Username</label><br><br>
+                    <input type="text" id="reg-username" name="username" placeholder="username" required><br><br>
+                    <label for="reg-email">Email</label><br><br>
+                    <input type="email" id="reg-email" name="email" placeholder="email" required><br><br>
+                    <label for="reg-password">Password</label><br><br>
+                    <input type="password" id="reg-password" name="password" placeholder="password" required><br><br>
+                    <button class="bt">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>WASTE MANAGEMENT</h1>
+        <p>We are the best waste management company.<br> We provide all your services within and around your house.</p>
+        <div>
+            <button type="button" class="btn-home" style="position: relative; overflow: hidden; width: 200px; padding: 15px 0; text-align: center; margin: 20px 10px; border-radius: 25px; font-weight: bold; border: 2px solid green; background: transparent; color: rgb(241, 162, 14); cursor: pointer;;"><span style="background: green; height: 100%; width: 0; border-radius: 25px; position: absolute; left: 0; bottom: 0; transition: 0.5s; z-index: -1;"></span>GET STARTED</button>
+            <button type="button" class="btn-home" style="position: relative; overflow: hidden; width: 200px; padding: 15px 0; text-align: center; margin: 20px 10px; border-radius: 25px; font-weight: bold; border: 2px solid green; background: transparent; color: rgb(241, 162, 14); cursor: pointer;"><span style="background: green; height: 100%; width: 0; border-radius: 25px; position: absolute; left: 0; bottom: 0; transition: 0.5s; z-index: -1;"></span>LEARN MORE</button>
+            <!-- <button type="button" class="btn-home"><span></span>LEARN MORE</button> -->
+        </div>
+    </div>
+    <footer>
+        <div class="container"></div>
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p>Email: finalgroup12@alustudents.com</p>
+                <p>Phone: +25470123456789</p>
+                <p>Address: Bumbogo, Gasabo</p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="Home">Home</a></li>
+                    <li><a href="Services">Services</a></li>
+                    <li><a href="Admin">Admin</a></li>
+                    <li><a href="About Us">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </div>
+            <div class="bottom-bar">
+                <p>© 2024 Waste Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+</body>
+</html>

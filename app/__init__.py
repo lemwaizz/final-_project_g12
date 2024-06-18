@@ -1,22 +1,28 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_login import LoginManager
-
-db = SQLAlchemy()
-login = LoginManager()
+import logging
+from flask import Flask, render_template
+from app.config import Config
+from app.extensions import db, login_manager
+from app.routes import register_routes
 
 def create_app():
-    app = Flask(__name__)
-    app.config.from_object('config.Config')
+    # Basic logging configuration
+    logging.basicConfig(level=logging.DEBUG)
+    app = Flask(__name__, static_folder='static', template_folder='templates')
+    
+    # Configurations
+    app.config.from_object(Config)
+    
+    # Initialize extensions
+    db.init_app(app)
+    login_manager.init_app(app)
+    
+    # Register routes
+    register_routes(app)
+    
+    @app.route('/test')
+    def test():
+        return 'This is a test route.'
 
-    db = SQLAlchemy(app)
-    migrate = Migrate(app, db)
-    login = LoginManager(app)
-    login.login_view = 'auth.login'
-
-    from app.routes import auth_routes, waste_routes
-    app.register_blueprint(auth_routes.auth_bp, url_prefix='/auth')
-    app.register_blueprint(waste_routes.waste_bp, url_prefix='/waste')
-
+    app.logger.debug('App created successfully!')
+    
     return app

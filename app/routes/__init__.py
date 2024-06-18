@@ -1,13 +1,12 @@
-# final-_project_g12/app/routes/__init__.py
+from flask import Blueprint
 
-# Import Flask Blueprint objects from respective modules
-from .auth_routes import auth_bp
-from .waste_routes import waste_bp
+def register_routes(app):
+    from app.routes.auth_routes import auth_bp
+    from app.routes.user_routes import user_bp
+    from app.routes.schedule_routes import schedule_bp
+    from app.routes.recycle_routes import recycle_bp
 
-# Optionally, you can organize the imports further if needed.
-# For example:
-# from . import auth_routes
-# from . import waste_routes
-
-# You can define any initialization logic here if necessary.
-# This file is often left empty if there's no additional setup required.
+    app.register_blueprint(auth_bp, url_prefix='/api/auth')
+    app.register_blueprint(user_bp, url_prefix='/api/users')
+    app.register_blueprint(schedule_bp, url_prefix='/api/schedules')
+    app.register_blueprint(recycle_bp, url_prefix='/api/recycle')

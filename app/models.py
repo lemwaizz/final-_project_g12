@@ -1,43 +1,29 @@
 from datetime import datetime
-from app import db, login
-from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+from app.extensions import db
 
-class User(UserMixin, db.Model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), index=True, unique=True)
-    email = db.Column(db.String(120), index=True, unique=True)
-    password_hash = db.Column(db.String(128))
-    role = db.Column(db.String(10))  # 'household', 'waste_service', 'admin'
-
+    username = db.Column(db.String(64), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password_hash = db.Column(db.String(128), nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
-
+    
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    def __repr__(self):
-        return f'<User {self.username}>'
-
-class WasteCollection(db.Model):
+class Schedule(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    schedule = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    status = db.Column(db.String(20))  # 'scheduled', 'completed'
-
-    def __repr__(self):
-        return f'<WasteCollection {self.schedule} for User {self.user_id}>'
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    date = db.Column(db.Date, nullable=False)
+    time = db.Column(db.Time, nullable=False)
 
 class Recycling(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    weight = db.Column(db.Float)  # weight of recycled materials
-
-    def __repr__(self):
-        return f'<Recycling {self.weight}kg on {self.date} by User {self.user_id}>'
-
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
-
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    item = db.Column(db.String(64), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
+    date = db.Column(db.Date, nullable=False)

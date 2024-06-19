@@ -3,7 +3,7 @@
 from flask import Flask
 from .config import Config
 from flask_sqlalchemy import SQLAlchemy
-from .routes import register_blueprints
+from .routes import register_routes
 
 db = SQLAlchemy()
 

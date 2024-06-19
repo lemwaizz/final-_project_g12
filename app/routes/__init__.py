@@ -1,4 +1,8 @@
 from flask import Blueprint
+from .auth import auth_bp
+from .user import user_bp
+from .schedule import schedule_bp
+from .recycle import recycle_bp
 
 def register_routes(app):
     from app.routes.auth_routes import auth_bp

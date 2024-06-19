@@ -1,28 +1,21 @@
-import logging
-from flask import Flask, render_template
-from app.config import Config
-from app.extensions import db, login_manager
-from app.routes import register_routes
+# app/__init__.py
+
+from flask import Flask
+from .config import Config
+from flask_sqlalchemy import SQLAlchemy
+from .routes import register_blueprints
+
+db = SQLAlchemy()
 
 def create_app():
-    # Basic logging configuration
-    logging.basicConfig(level=logging.DEBUG)
-    app = Flask(__name__, static_folder='static', template_folder='templates')
-    
-    # Configurations
+    app = Flask(__name__)
     app.config.from_object(Config)
-    
-    # Initialize extensions
-    db.init_app(app)
-    login_manager.init_app(app)
-    
-    # Register routes
-    register_routes(app)
-    
-    @app.route('/test')
-    def test():
-        return 'This is a test route.'
 
-    app.logger.debug('App created successfully!')
-    
+    # Initialize SQLAlchemy with the Flask app
+    db.init_app(app)
+
+    # Import and register blueprints
+    from .routes import auth_bp
+    app.register_blueprint(auth_bp)
+
     return app

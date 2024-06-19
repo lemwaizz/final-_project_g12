@@ -10,7 +10,7 @@ def register_routes(app):
     from app.routes.schedule_routes import schedule_bp
     from app.routes.recycle_routes import recycle_bp
 
-    app.register_blueprint(auth_bp, url_prefix='/api/auth')
-    app.register_blueprint(user_bp, url_prefix='/api/users')
-    app.register_blueprint(schedule_bp, url_prefix='/api/schedules')
-    app.register_blueprint(recycle_bp, url_prefix='/api/recycle')
+    app.register_blueprint(auth_bp, url_prefix='/auth')
+    app.register_blueprint(user_bp, url_prefix='/user')
+    app.register_blueprint(schedule_bp, url_prefix='/schedule')
+    app.register_blueprint(recycle_bp, url_prefix='/recycle')

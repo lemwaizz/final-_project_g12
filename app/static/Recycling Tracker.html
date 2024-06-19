@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Tracker</title>
+    <link rel="stylesheet" href="Recycling.css">
+</head>
+<body>
+    
+
+    <main class="main-content">
+        <h1>Recycling Tracker</h1>
+        <form id="recyclingForm">
+            <label for="item">Recycled Item:</label>
+            <input type="text" id="item" name="item" required><br><br>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" step="0.01" required><br><br>
+
+            <button type="submit">Add to Tracker</button>
+        </form>
+
+        <div id="tracker">
+            <h2 style="color: green;">My Recycling Efforts</h2>
+            <table id="recyclingTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Weight (kg)</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Recycling entries will be added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="impact">
+            <h2>Environmental Impact</h2>
+            <p>Total Weight Recycled: <span id="totalWeight">0</span> kg</p>
+            <p>Equivalent CO2 Saved: <span id="co2Saved">0</span> kg</p>
+        </div>
+    </main>
+
+    
+
+    <script src="recycling.js"></script>
+</body>
+</html>

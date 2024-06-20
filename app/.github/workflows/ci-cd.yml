@@ -16,7 +16,7 @@ jobs:
       postgres:
         image: postgres:latest
         ports:
-          - 5432:5432
+          - 5000:5000
         env:
           POSTGRES_DB: test_db
           POSTGRES_USER: postgres

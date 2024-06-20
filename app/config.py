@@ -1,11 +1,6 @@
 import os
 from dotenv import load_dotenv
 
-
-uri = os.getenv("DATABASE_URL")  # or other relevant config var
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://", 1)
-
 load_dotenv()
 
 class Config:

@@ -1,5 +1,6 @@
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.urls import url_unquote
 from app.extensions import db
 
 class User(db.Model):

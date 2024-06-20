@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    
-    # Heroku PostgreSQL database URL
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
-    
-
+    SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'postgresql://mwai:12345@localhost/smart')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'default_jwt_secret_key')

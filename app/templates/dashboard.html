@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: green;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .navbar {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            background-color:gray
+        }
+        .navbar .nav-link {
+            color: white;
+        }
+        .collapse.navbar-collapse {
+            background-color:gray
+        }
+        .navbar-nav .nav-item {
+            display: inline-block;
+        }
+        .navbar-nav .nav-item .nav-link {
+            display: inline-block;
+        }
+        .navbar-nav .nav-item div a {
+            color: white;
+            margin-left: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .section {
+            background-color: green;
+            padding: 20px;
+            color: white;
+        }
+        .section p {
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="download__3_-removebg-preview.png" style="width: 150px; height: 100px;">
+        <h2 class="text-center">Admin Dashboard</h2>
+        <a href="#dashboard" onclick="showSection('dashboard')"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#users" onclick="showSection('users')"><i class="fas fa-users"></i> Users</a>
+        <a href="#reports" onclick="showSection('reports')"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="#settings" onclick="showSection('settings')"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="#logout" onclick="showSection('logout')"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <div>
+                        <a href="home.html" class="nav-link">home</a>
+                        <a href="features.html" class="nav-link">features</a>
+                        <a href="products.html" class="nav-link">products</a>
+                        <a href="About us.html" class="nav-link">About us</a>
+                        <a href="dashboard.html" class="nav-link">dashboard</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#alerts" onclick="showSection('alerts')"><i class="fas fa-bell"></i> Alerts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#profile" onclick="showSection('profile')"><i class="fas fa-user-circle"></i> Profile</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section">
+            <h2>Dashboard</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: orange;">
+                        <div class="card-body">
+                            <h5 class="card-title">User Registration and Login</h5>
+                            <p class="card-text">Welcome to the registration desk!</p>
+                            
+                            <a href="Registration.html" class="btn btn-primary">Registration</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: orange";>
+                        <div class="card-body">
+                            <h5 class="card-title">Waste Collection Schedule.</h5>
+                            <p class="card-text">Schedule for your Waste Collection here </p>
+                            <a href="Waste Collection Schedule.html" class="btn btn-primary">Schedule</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: orange";>
+                        <div class="card-body">
+                            <h5 class="card-title">Recycling Tracker</h5>
+                            <p class="card-text">Make Recycling Tracker here</p>
+                            <a href="Recycling Tracker.html" class="btn btn-primary">Recycling</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: orange";>
+                        <div class="card-body">
+                            <h5 class="card-title">Waste Collection Services Management</h5>
+                            <p class="card-text">Management your Waste Collection Services </p>
+                            <a href="colloction.html" class="btn btn-primary">Services Management</a>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            </div>
+        </div>
+
+        <!-- Users Section -->
+        <div id="users" class="section hidden">
+            <h2>User Management</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Users</h5>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- User data will be dynamically populated here -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Donii</td>
+                                        <td>Donii@gmail.com</td>
+                                        <td>Admin</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Kanisa</td>
+                                        <td>Kanisa@gmail.com</td>
+                                        <td>User</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <!-- Additional user data here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div id="reports" class="section hidden">
+            <h2>Reports</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">System Performance</h5>
+                            <p class="card-text">Summary of system performance, user activity, and other metrics.</p>
+                            <!-- Include charts or graphs here -->
+                            <canvas id="performanceChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settings" class="section hidden">
+            <h2>Settings</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">System Settings</h5>
+                            <form>
+                                <div class="form-group">
+                                    <label for="siteName">Site Name</label>
+                                    <input type="text" class="form-control" id="siteName" placeholder="Enter site name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminEmail">Admin Email</label>
+                                    <input type="email" class="form-control" id="adminEmail" placeholder="Enter admin email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Settings</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts Section -->
+        <div id="alerts" class="section hidden">
+            <h2>Alerts</h2>
+            <p>This is the alerts section.</p>
+        </div>
+
+         <!-- Profile Section -->
+         <div id="profile" class="section hidden">
+            <h2>Profile</h2>
+            <div>
+                <h4>Upload Profile Picture</h4>
+                <input type="file" id="profilePicInput" accept="image/*">
+                <br><br>
+                <div id="profilePicPreview">
+                    <img id="profilePic" src="placeholder.jpg" alt="Profile Picture" style="max-width: 200px; border-radius:50%;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Logout Section -->
+        <div id="logout" class="section hidden">
+            <h2>Logout</h2>
+            <p>You have been logged out. <a href="#login">Login again</a></p>
+        </div>
+    </div>
+
+     <!-- JavaScript -->
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script>
+         // Function to handle file upload and preview image
+         document.getElementById('profilePicInput').addEventListener('change', function(event) {
+             const file = event.target.files[0];
+             const reader = new FileReader();
+             
+             reader.onload = function(e) {
+                 document.getElementById('profilePic').setAttribute('src', e.target.result);
+             }
+             
+             reader.readAsDataURL(file);
+         });
+ 
+         // Function to toggle sections visibility
+         function showSection(sectionId) {
+             const sections = ['dashboard', 'users', 'reports', 'settings', 'alerts', 'profile', 'logout'];
+             sections.forEach(section => {
+                 document.getElementById(section).classList.add('hidden');
+             });
+             document.getElementById(sectionId).classList.remove('hidden');
+         }
+     </script>
+</body>
+</html>

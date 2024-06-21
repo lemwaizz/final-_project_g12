@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.header {
+    background-color: rgb(41, 192, 41);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, .1);
+}
+
+.header img.logo {
+    width: 120px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: #333;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.icons .fa {
+    font-size: 2rem;
+    margin-right: .3rem;
+    cursor: pointer;
+}
+
+.icons .fa:hover {
+    color: rgb(41, 192, 41);
+    background-color: #333;
+    border-radius: .5rem;
+}
+
+.search-form {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 10%;
+    width: 50rem;
+    height: 5rem;
+    background: rgb(41, 192, 41);
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, .1);
+}
+
+.search-form.active {
+    display: flex;
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.search-form input[type="search"] {
+    height: 100%;
+    width: 100%;
+    background: none;
+    font-size: 1.6rem;
+    color: #333;
+    padding: 0 1.5rem;
+    border: none;
+    outline: none;
+}
+
+/* Keyframes for text animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to .animated-text elements */
+.landing-content .animated-text {
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeInUp 1s ease forwards; /* Animation duration, easing, and fill mode */
+    animation-delay: 0.5s; /* Delay animation start */
+}
+
+.landing-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.landing-content p {
+    font-size: 2rem;
+    color: green;
+    margin-bottom: 2rem;
+}
+
+.landing-content .btn {
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.landing-content .btn:hover {
+    background-color: #555;
+}
+
+
+.landing {
+    text-align: center;
+    margin-top: 80px;
+    height: 200px !important; /* Add !important to enforce this rule */
+}
+
+.landing h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.landing p {
+    font-size: 2rem;
+    color: #f11212;
+    margin-bottom: 2rem;
+}
+
+.landing .btn {
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border: green 3px solid;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.landing .btn:hover {
+    background-color: #555;
+}
+
+
+body{background-image: url("wan.avif");
+background-size: cover;
+background-repeat: no-repeat;}
+
+.footer {
+    background: #fff;
+    padding: 4rem 0;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.boxa {
+    padding: 1rem;
+    
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.boxa h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+.boxa p {
+    font-size: 1.6rem;
+    
+    line-height: 1.6;
+}
+
+.links {
+    display: block;
+    font-size: 1.6rem;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: .5rem;
+}
+
+.links i {
+    margin-right: .5rem;
+}
+
+.email {
+    width: 100%;
+    padding: .8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+}
+
+.btn.btm {
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.btn.btm:hover {
+    background-color: #555;
+}

@@ -5,31 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste Collection Services Management</title>
     <link rel="stylesheet" href="collection.css">
+    <link rel="stylesheet" href="newstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        /* Your custom styles here */
+    </style>
 </head>
 <body>
-   
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#"><img src="download__3_-removebg-preview.png" class="logo" alt="WasteMS"></a>
+        <nav class="navbar">
+            <a href="Landing page.html">Landing page</a>
+            <a href="Schedule.html">Schedule</a>
+            <a href="Recycling.html">Recycling</a>
+            <a href="colloction.html">Collection</a>
+            <a href="about us.html">About Us</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+        <div class="icons">
+            <div class="fa fa-bars" id="menu-btn"></div>
+            <div class="fa fa-search" id="search-btn"></div>
+            <div class="fa fa-shopping-cart" id="cart-btn"></div>
+            <div class="fa fa-user" id="login-btn"></div>
+        </div>
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Search here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+    </header>
 
+    <!-- Main Content Section -->
     <main class="main-content">
         <h1>Waste <span style="color: green;">Collection Services</span> Management</h1>
-        
         <form id="collectionForm">
             <label for="route">Route:</label>
             <input type="text" id="route" name="route" required><br><br>
-
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required><br><br>
-
             <label for="time">Time:</label>
             <input type="time" id="time" name="time" required><br><br>
-
             <label for="performance">Performance Metric (tons collected):</label>
             <input type="number" id="performance" name="performance" step="0.01" required><br><br>
-
-            <button type="submit">Add Collection</button>
+            <button type="submit" id="addButton">Add Collection</button>
         </form>
-
         <div id="collectionSchedule">
-            <h2 style="color: green;">Collection Schedule</h2>
+            <h2 style="color: green; font-size: 20px;">Collection Schedule</h2>
             <table id="collectionTable">
                 <thead>
                     <tr>
@@ -37,22 +59,63 @@
                         <th>Date</th>
                         <th>Time</th>
                         <th>Performance (tons)</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Collection entries will be added here -->
+                    <!-- Collection entries will be added here dynamically -->
                 </tbody>
             </table>
         </div>
-
         <div id="performanceTracking">
             <h2>Performance Tracking</h2>
             <p>Total Waste Collected: <span id="totalCollected">0</span> tons</p>
         </div>
     </main>
 
-    
+    <!-- Footer Section -->
+    <footer>
+        <section class="footer">
+            <div class="box-container">
+                <div class="boxa">
+                    <a href="#"><img src="download__3_-removebg-preview.png" class="logo" alt="WasteMS"></a>
+                    <p>Feel free to follow us on our social media pages using
+                        the links given below.
+                    </p>
+                    <div>
+                        <a href="#" class="fa fa-facebook" style="font-size:35px; color:green;"></a>
+                        <a href="#" class="fa fa-twitter" style="font-size:35px; color:green;"></a>
+                        <a href="#" class="fa fa-instagram" style="font-size:35px; color:green;"></a>
+                        <a href="#" class="fa fa-linkedin" style="font-size:35px; color:green;"></a>
+                        <a href="#" class="fa fa-github" style="font-size:35px; color:green;"></a>
+                    </div>
+                </div>
+                <div class="boxa">
+                    <h3>Contact Info</h3>
+                    <a href="#" class="links"> <i class="fas fa-phone"></i> +254-714-567-890 </a>
+                    <a href="#" class="links"> <i class="fas fa-envelope"></i> info@wemanagewaste.com </a>
+                    <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Bumbogo, Kigali </a>  
+                </div>
+                <div class="boxa">
+                    <h3>Quick Links</h3>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Features </a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Products </a>
+                    <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Dashboard </a>
+                     <a href="#" class="links"> <i class="fas fa-arrow-right"></i> About Us </a>
+                </div>
+                <div class="boxa">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter</p>
+                    <input type="email" placeholder="Enter your email" class="email">
+                    <input type="submit" value="Subscribe" class="btn">
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!--Footer Section End-->
 
+    <!-- External JavaScript File -->
     <script src="collection.js"></script>
 </body>
 </html>

@@ -93,11 +93,15 @@ The Smart Waste Management System is a web application designed to help users ma
 ## Conclusion
 The Smart Waste Management System project successfully developed a comprehensive web application with robust features and functionalities. The team worked collaboratively, with regular meetings and version control using GitHub. This project provided practical experience in full-stack development, teamwork, and best practices, valuable for real-world development scenarios.
 
+## link to the slides.
+
+https://www.canva.com/design/DAGItTEDHLA/YTe09t0JKDWaP_uZ8TkM5w/edit?utm_content=DAGItTEDHLA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 
 
 
-##Waste Management
+
+## Waste Management
 
 ![image](https://github.com/lemwaizz/final-_project_g12/assets/144005852/e6827c09-77d2-48e6-add9-de3f5aeb7b10)
 
